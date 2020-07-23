@@ -1,5 +1,6 @@
 from django.shortcuts import render
-
+from .models import platillo
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
+    platos=platillo.objects.all()
+    return render(request,'index.html',{'platos':platos})

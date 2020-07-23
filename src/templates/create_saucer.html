@@ -1,0 +1,19 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css2/register.css' %}">
+    <title>Crear Platillo</title>
+</head>
+<body>
+    <form action="create_saucer" method="post" enctype="multipart/form-data">
+        {%csrf_token%}
+        <input type="text" name="Name" placeholder="Nombre del destino"><br>
+        <input type="file" name="Platillo_img" ><br>
+        <textarea name="Descripcion"  cols="30" rows="4" placeholder="Descripcion del lugar"></textarea><br>
+        <input type="number" name="Precio" placeholder="Precio"><br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
