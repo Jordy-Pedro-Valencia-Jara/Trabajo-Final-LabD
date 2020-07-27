@@ -86,7 +86,8 @@ table {
 }
 .menu-icon
 {
-    color: #fff;
+    position: fixed;
+    color: rgb(255, 255, 255);
     font-size: 30px;
     margin-top: 30px;
     cursor: pointer;

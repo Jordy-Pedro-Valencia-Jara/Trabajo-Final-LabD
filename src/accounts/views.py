@@ -53,12 +53,14 @@ def create_saucer(request):
         Name=request.POST['Name']
         Platillo_img=request.FILES['Platillo_img']
         Descripcion=request.POST['Descripcion']
+        Breve=request.POST['Breve']
         Precio=request.POST['Precio']
         print(Name)
         print(Platillo_img)
         print(Descripcion)
+        print(Breve)
         print(Precio)
-        imgs=platillo.objects.create(name=Name,img=Platillo_img,desc=Descripcion,price=Precio)
+        imgs=platillo.objects.create(name=Name,img=Platillo_img,desc=Descripcion,Brev=Breve,price=Precio)
         imgs.save()
         print('platillo agregado')
         platos=platillo.objects.all()
