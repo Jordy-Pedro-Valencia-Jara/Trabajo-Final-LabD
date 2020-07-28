@@ -1,18 +1,23 @@
+{% load static %}
+{% static "images" as baseUrl %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{% static 'css2/lista.css' %}">
 	<title>Listado platillos</title>
 </head>
 <body>
-	<h2>Lista</h2>
+	
 	<table>
+		<caption>Lista de Platillos</caption>
 		<tr>
 			<th>Nombre</th>
 			<th>Imagen</th>
 			<th>Descripcion</th>
-			<th>precio</th>
-			<th>opciones</th>
+			<th>Precio</th>
+			<th>Cocinero</th>
+			<th colspan="2">Opciones</th>
 		</tr>
 		{% for platos in data %}
 		<tr>
@@ -21,8 +26,8 @@
 			<td>{{ platos.desc }}</td>
 			<td>{{ platos.price }}</td>
 			<td>{{ platos.offer }}</td>
-			<td><a href="{% url 'eliminar' platos.id %}">Eliminar</a>
-				<a href="{% url 'modificar' platos.id %}">Modificar</a></td>
+			<td><a href="{% url 'eliminar' platos.id %}">Eliminar</a></td>
+			<td><a href="{% url 'modificar' platos.id %}">Modificar</a></td>
 		</tr>
 		{% endfor %}
 	</table>

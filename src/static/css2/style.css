@@ -1,0 +1,48 @@
+.item,.item-datos{
+    float: left;
+    background-color: chocolate;
+    height: 340px;
+    width: 48%;
+}
+.container{
+    background-color: chartreuse;
+    overflow: hidden;
+    padding: 1% 0 5% 0 ;
+    
+}
+.center{
+    margin:0 10% 0 10%;
+    overflow: hidden;
+}
+.item-datos{
+    padding: 10px;
+    border-right: 5px solid blue;
+}
+.button-Anterior{
+    left: 50px;
+}
+.button-Siguiente{
+    left: 280px;
+}
+.button-Anterior,.button-Siguiente{
+    position: relative;
+    padding: 9px;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 15px;
+}
+p{
+    background-color: crimson;
+    overflow: auto;
+    height: 100px;
+}
+input[type=button]:hover{
+    background-color: yellow;
+    color: black;
+    margin: 0px;
+}
+input[type=button]{
+    outline:none;
+    margin: 0px;
+    
+}

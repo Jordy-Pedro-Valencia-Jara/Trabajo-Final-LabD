@@ -77,6 +77,7 @@ def modificar(request,id):
         data.name=request.POST['Name']
         data.img=request.FILES['Direccion']
         data.desc=request.POST['Descripcion']
+        data.Brev=request.POST['Ingredientes']
         data.price=request.POST['Precio']
         data.save()
         return redirect('listar')

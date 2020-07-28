@@ -6,6 +6,7 @@ body{
     font-family: monospace;
 }
 form{
+    text-align: center;
     width:450px;
     margin:auto;
     background:rgba(0,0,0,0.4);
@@ -14,6 +15,7 @@ form{
     margin-top:20px;
     border-radius:7px;
 }
+
 h2{
     color:#fff;
     text-align:center;
@@ -37,9 +39,14 @@ input[type=submit]{
    background:#31384A ;
    color:#fff;
    padding:20px;
+   border: none;
 }
 input[type=submit]:hover{
     cursor: pointer;
+    color: green;
+}
+h2{
+    font-size: 40px;
 }
 @media(max-width:480px){
     form{
