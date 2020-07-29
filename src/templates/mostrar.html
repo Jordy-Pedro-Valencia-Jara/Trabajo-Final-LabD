@@ -1,3 +1,5 @@
+{% load static %}
+{% static "images" as baseUrl %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,22 +11,21 @@
 <body>
     <div class="container">
         <div class="center">
-            <h1>Nombre del Platillo</h1>
+            {%csrf_token%}
+            <h1>{{data.name}}</h1>
+            
             <div class="item">
-                <img src="Captura de pantalla de 2020-07-23 13-36-05.png" height="380px" width="100%">
+                <img src="{{data.img.url}}" height="380px" width="100%">
             </div>
         
             <div class="item-datos" >
-                <h3>Chef :Nombre del chef </h3>
-                <h3>Tipo :Tipo de comida </h3>
-                <h3>Ingredientes: Todos los ingredientes</h3>
-                <h3>Descripcion </h3>
+                <label>Chef :Nombre del chef </label><br>
+                <label>Tipo :Tipo de comida </label><br>
+                <label>Ingredientes: {{data.Brev}}</label><br>
+                <label>Descripcion: </label><br>
                 <div>
-                    <p>La  descripcion va aquijdfsbhbdshbchdshbchbdshbchbdshbcibdichbdbcibsib
-                        cuisbuicbusbsbduvuyabduevtudbahbcytgbyucnjiabcyuabuicnajihbyfb
-                        aeunjnucbubfyebycbeycbyebycuucbe
-                        uncjnucuybahsbhh ah xh sahc jsbhc jsa hc asjc saj ckan ocisa ocaso cko oc os aok cojs joc oas oc aso oc aso co aso coas cosa oc oc
-                     cja jc ja jc ja cio do okd vo vpoiv orvok ov oks voaovo ov or vor vor oivo vo uio vo ouvro vorinvur vi irivirviiviroprmir v viiovrnvuoior vi iv ri</p>
+                    <p>{{data.desc}}</p>
+                     <h4>Precio : {{data.price}}</h4>
                     <input type="button" value="Anterior" class="button-Anterior">
                     <input type="button" value="Siguiente" class="button-Siguiente">
             </div>
@@ -32,5 +33,6 @@
 
         </div>
     </div>
+    
 </body>
 </html>

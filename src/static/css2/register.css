@@ -41,6 +41,8 @@ textarea{
 }
 input[type=text],input[type=email],input[type=password],input[type=number],textarea{
     background:rgba(0, 0, 0, 0.808);
+    outline: 0;
+    color: yellow;
     border: none;
 
 }
@@ -51,6 +53,7 @@ input[type=submit]{
    font-size: 20px;
    padding:20px;
    border: none;
+   outline: 0;
 }
 input[type=submit]:hover{
     border: none;
@@ -70,6 +73,7 @@ input[type=file]{
     color: yellow;
     border: none;
     background:rgba(0, 0, 0, 0.808);
+    outline: 0;
 }
 @media(max-width:480px){
     form{

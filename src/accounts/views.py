@@ -85,3 +85,7 @@ def modificar(request,id):
 def listar(request):
     data=platillo.objects.all()
     return render(request,'listar.html',{'data':data,})
+def mostrar(request,id):
+    data=platillo.objects.get(id=id)
+    return render(request,'mostrar.html',{'data':data})
+

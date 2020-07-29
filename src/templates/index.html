@@ -159,7 +159,7 @@
           {%for platillos in platos%}
           <div class="mix category-1 menu-restaurant" data-myorder="2">
             <span class="clearfix">
-                        <a class="menu-title" href="#" data-meal-img="{% static 'assets/img/restaurant/rib.jpg' %}">{{platillos.name}}</a>
+                        <a class="menu-title" href="{% url 'mostrar' platillos.id %}" data-meal-img="{% static 'assets/img/restaurant/rib.jpg' %}">{{platillos.name}}</a>
                         <span style="left: 166px; right: 44px;" class="menu-line"></span>
             <span class="menu-price">${{platillos.price}}</span>
             </span>
