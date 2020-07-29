@@ -7,5 +7,6 @@ urlpatterns=[
     path("create_saucer",views.create_saucer,name="create_saucer"),
     path("listar",views.listar,name="listar"),
     path("eliminar/<id>/",views.eliminar,name="eliminar"),
-    path("modificar/<id>/",views.modificar,name="modificar")
+    path("modificar/<id>/",views.modificar,name="modificar"),
+    path("mostrar/<id>/",views.mostrar,name="mostrar")
 ]

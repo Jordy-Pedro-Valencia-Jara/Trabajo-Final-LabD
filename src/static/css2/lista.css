@@ -1,6 +1,6 @@
 
 body{
-    background-image: url(https://www.viajejet.com/wp-content/viajes/chupe-de-camarones.jpg);
+    background-image: url(https://s2.best-wallpaper.net/wallpaper/1920x1200/1805/Pancakes-caviar-plate-food_1920x1200.jpg);
     background-size: 100vw 100vh;
     margin: 0px;
     padding: 0px;
@@ -18,7 +18,7 @@ table{
     width: 100%;
 }
 table tr:nth-child(even){
-    background-color:rgba(255, 187, 0, 0.493);
+    background-color:rgba(255, 187, 0, 0.404);
     color: black;
 }
 
@@ -48,5 +48,5 @@ a:hover{
 caption{
     font-size: 70px;
     color:rgb(0, 0, 0);
-    background-color:rgba(255, 127, 80, 0.5);
+    background-color:rgba(255, 127, 80, 0.247);
 }

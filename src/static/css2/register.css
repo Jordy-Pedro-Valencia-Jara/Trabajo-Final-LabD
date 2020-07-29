@@ -1,5 +1,5 @@
 body{
-    background-image: url(https://dam.cocinafacil.com.mx/wp-content/uploads/2020/04/recetas-de-comida-cuarentena.jpg);
+    background-image: url(https://userscontent2.emaze.com/images/bd914df1-7980-48ec-894e-e0d677ee8026/43de5fb2-1283-4516-9847-bf211054d11b.jpg);
     background-size: 100vw 100vh;
     background-attachment:fixed ;
     margin: 0;
@@ -17,11 +17,12 @@ form{
 }
 
 h2{
-    color:#fff;
     text-align:center;
     margin:0;
     font-size:30px;
     margin-bottom:20px;
+    font-size: 40px;
+    color: rgb(255, 255, 0);
 }
 input,textarea{
     width:100%;
@@ -35,18 +36,40 @@ textarea{
     max-height: 200px;
     
 }
+::placeholder{
+    color: yellow;
+}
+input[type=text],input[type=email],input[type=password],input[type=number],textarea{
+    background:rgba(0, 0, 0, 0.808);
+    border: none;
+
+}
+
 input[type=submit]{
-   background:#31384A ;
-   color:#fff;
+    background: rgba(0, 0, 0, 0.808);
+   color:yellow;
+   font-size: 20px;
    padding:20px;
    border: none;
 }
 input[type=submit]:hover{
+    border: none;
     cursor: pointer;
-    color: green;
+    color: rgb(255, 255, 0);
+    background: rgb(0, 0, 0);
+    border-bottom: 1px solid white;
+    border-right:1px solid white ;
+    border-radius: 2px;
 }
-h2{
-    font-size: 40px;
+h1{
+    font-size: 30px;  
+    color: yellow;  
+
+}
+input[type=file]{
+    color: yellow;
+    border: none;
+    background:rgba(0, 0, 0, 0.808);
 }
 @media(max-width:480px){
     form{

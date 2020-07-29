@@ -8,17 +8,14 @@
 </head>
 <body>
     <form action="create_saucer" method="post" enctype="multipart/form-data">
+        <h1>Create Saucer</h1>
         {%csrf_token%}
         <input type="text" name="Name" placeholder="Nombre del platillo"><br>
-        <input type="file" name="Platillo_img" ><br>
+        <input type="file" name="Platillo_img"><br>
         <textarea name="Descripcion"  cols="30" rows="4" placeholder="Descripcion del platillo"></textarea><br>
-
-
         <input type="text" name="Breve" placeholder="Ingredientes">
-
-
         <input type="number" name="Precio" placeholder="Precio"><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Create Saucer">
     </form>
 </body>
 </html>
