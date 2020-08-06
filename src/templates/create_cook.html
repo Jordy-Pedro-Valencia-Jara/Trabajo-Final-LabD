@@ -1,0 +1,28 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.vippng.com/png/full/501-5019302_unidos-por-nios-saludables-nestle.png" >
+    <link rel="stylesheet" href="{% static 'css2/create_cook.css' %}">
+    <title>Create Cook</title>
+</head>
+<body>
+    {%if user.is_superuser %}
+    <form action="create_cook" method="post">
+        <h1>Ingresar Chef</h1>
+        {%csrf_token%}
+        <input type="text" name="Name" placeholder="Ingrese su nombre">
+        <input type="text" name="LastName"placeholder="Ingrese su Apellido">
+        <input type="file" name="Foto" placeholder="Ingrese su foto">
+        <input type="email" name="E-mail" placeholder="Ingrese su E-mail">
+        <input type="submit" value="Enviar">
+    </form>
+    {%else%}
+    <h2>No tienes permiso para poder crear un nuevo cocinero</h2>
+    {%endif%}
+
+
+</body>
+</html>

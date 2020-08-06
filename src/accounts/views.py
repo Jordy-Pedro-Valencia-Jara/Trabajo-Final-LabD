@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from comelona.models import platillo
+from comelona.models import chef
 # Create your views here.
 def login(request):
     if request.method=='POST':
@@ -63,8 +64,17 @@ def create_saucer(request):
         imgs=platillo.objects.create(name=Name,img=Platillo_img,desc=Descripcion,Brev=Breve,price=Precio)
         imgs.save()
         print('platillo agregado')
-        platos=platillo.objects.all()
+        
     return render (request,'create_saucer.html')
+def create_cook(request):
+    if request.method=='POST':
+        Name=request.POST['Name']
+        lastName=request.POST['LastName']
+        Foto=request.POST['Foto']
+        Email=request.POST['E-mail']
+        NewC=chef.objects.create(name=Name,las_name=lastName,img=Foto,email=Email)
+        NewC.save()
+    return render(request,'create_cook.html')
 def eliminar(request,id):
     data=platillo.objects.get(id=id)
     data.delete()

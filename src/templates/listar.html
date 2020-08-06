@@ -9,7 +9,6 @@
 	<title>Listado platillos</title>
 </head>
 <body>
-	
 	<table>
 		<caption>Lista de Platillos</caption>
 		<tr>
@@ -18,7 +17,9 @@
 			<th>Descripcion</th>
 			<th>Precio</th>
 			<th>Cocinero</th>
+			{%if user.is_superuser %}
 			<th colspan="2">Opciones</th>
+			{%endif%}
 		</tr>
 		{% for platos in data %}
 		<tr>
@@ -27,10 +28,13 @@
 			<td>{{ platos.desc }}</td>
 			<td>{{ platos.price }}</td>
 			<td>{{ platos.offer }}</td>
+			{%if user.is_superuser %}
 			<td><a href="{% url 'eliminar' platos.id %}">Eliminar</a></td>
 			<td><a href="{% url 'modificar' platos.id %}">Modificar</a></td>
+			{%endif%}
 		</tr>
 		{% endfor %}
-	</table>
+	</table><br>
+	<a class="regresar" href="http://localhost:8000">Return</a>
 </body>
 </html>
