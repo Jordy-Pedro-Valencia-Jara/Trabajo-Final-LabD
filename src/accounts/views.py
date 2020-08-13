@@ -3,6 +3,7 @@ from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from comelona.models import platillo
 from comelona.models import chef
+from comelona.models import compra
 # Create your views here.
 def login(request):
     if request.method=='POST':
@@ -16,7 +17,7 @@ def login(request):
             messages.info(request,'invalid credentials')
             return redirect('login')
     else:
-         return render(request,'login.html')   
+        return render (request,'login.html')   
          
 def register (request):
     if request.method=='POST':
@@ -98,4 +99,36 @@ def listar(request):
 def mostrar(request,id):
     data=platillo.objects.get(id=id)
     return render(request,'mostrar.html',{'data':data})
+def compras(request,id):
+    data=platillo.objects.get(id=id)
+    if request.method=='POST':
+        data=platillo()
+        Id=request.POST['textid']
+        cantidad=request.POST['Cantidad']
+        Name=request.POST['Name']
+        Price=request.POST['Price']
+        NewCom=compra.objects.create(Cantidad=cantidad,name=Name,price=Price)
+        NewCom.save()
+        print(Id)
+        return redirect('mostrar',Id)
+    return render(request,'compras.html',{'data':data})
+def listaCompra(request):
+    data=compra.objects.all()
+    return render(request,'listaCompra.html',{'data':data})
+def eliminar_compra(request,id):
+    data=compra.objects.get(id=id)
+    data.delete()
+    return redirect(to='listaCompra')
+def modificar_compra(request,id):
+    data=compra.objects.get(id=id)
+    if request.method=='POST':
+        data=compra()
+        data.Cantidad=request.POST['Cantidad']
+        data.id=request.POST['textid']
+        data.name=request.POST['Name']
+        data.price=request.POST['Precio']
+        data.save()
+        return redirect('listaCompra')
+    return render(request,'modificar_compra.html',{'data':data,})
+
 

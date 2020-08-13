@@ -1,0 +1,34 @@
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Compra</title>
+</head>
+<body>
+    <table>
+		<caption>Lista de compra</caption>
+		<tr>
+            <th>Cantidad</th>
+			<th>Nombre</th>
+            <th>Precio</th>
+        {%if user.is_superuser %}
+			<th colspan="2">Opciones</th>
+			{%endif%}
+		</tr>
+		{% for compras in data %}
+		<tr>
+            <td>{{compras.Cantidad}}</td>
+			<td>{{ compras.name }}</td>
+			<td>{{ compras.price }}</td>
+			<td><a href="{% url 'eliminar_compra' compras.id %}">Eliminar</a></td>
+			<td><a href="{% url 'modificar_compra' compras.id %}">Modificar</a></td>
+		</tr>
+        {% endfor %}
+        <span>Total: </span>
+	</table><br>
+	<a class="regresar" href="http://localhost:8000">Return</a>
+</body>
+</html>

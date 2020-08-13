@@ -32,12 +32,16 @@ body{
 .button-Siguiente{
     left: 280px;
 }
-.button-Anterior,.button-Siguiente{
+.button-Comprar{
+    left: 50px;
+}
+.button-Anterior,.button-Siguiente,.button-Comprar{
+    text-decoration: none;
     position: relative;
     padding: 9px;
     padding-right: 10px;
     padding-left: 10px;
-    font-size: 15px;
+    font-size: 20px;
     
 }
 p{
@@ -48,7 +52,7 @@ p{
     height: 100px;
     padding: 10px;
 }
-input[type=button]:hover{
+a,input[type=button]:hover{
     border: none;
     cursor: pointer;
     color: rgb(255, 255, 0);
@@ -57,7 +61,7 @@ input[type=button]:hover{
     border-right:1px solid white ;
     border-radius: 2px;
 }
-input[type=button]{
+a,input[type=button]{
     background: rgba(0, 0, 0, 0.808);
     color:yellow;
     font-size: 18px;

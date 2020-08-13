@@ -27,8 +27,9 @@
                 <div>
                     <p>{{data.desc}}</p>
                      <h4>Precio : {{data.price}}</h4>
-                    <input type="button" value="Anterior" class="button-Anterior">
-                    <input type="button" value="Siguiente" class="button-Siguiente">
+                    <a href="" class="button-Anterior">Anterior</a>
+                    <a href="" class="button-Siguiente">Siguiente</a>
+                    <a href="{% url 'compras' data.id %}" class="button-Comprar">Comprar</a>
             </div>
         </div>
 
